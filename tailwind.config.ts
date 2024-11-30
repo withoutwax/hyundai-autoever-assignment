@@ -11,6 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        mint: "#70d7bf",
+      },
+      fontFamily: {
+        sans: ["var(--kia-signature-fix)"],
+      },
+      transitionTimingFunction: {
+        custom: "cubic-bezier(1, 0, 0.2, 1)",
       },
     },
   },
