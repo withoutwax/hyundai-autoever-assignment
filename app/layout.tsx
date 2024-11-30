@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className={`${kiaSignatureFix.variable} antialiased`}>
+      <body className={`${kiaSignatureFix.variable} `}>
         <Navbar />
         {children}
       </body>
