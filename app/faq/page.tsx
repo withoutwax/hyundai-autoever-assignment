@@ -1,9 +1,10 @@
+import AppInfo from "@/components/AppInfo";
 import ProcessInfo from "@/components/ProcessInfo";
 import ServiceInquiry from "@/components/ServiceInquiry";
 
 export default function Faq() {
   return (
-    <div className="px-[48px]">
+    <div className="px-[48px] pb-[96px]">
       <div className="max-w-[1240px] mx-auto">
         <h1 className="flex flex-col justify-center items-center h-[222px]">
           자주 묻는 질문
@@ -13,6 +14,7 @@ export default function Faq() {
         </h1>
         <ServiceInquiry />
         <ProcessInfo />
+        <AppInfo />
       </div>
     </div>
   );
