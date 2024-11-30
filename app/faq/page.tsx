@@ -1,3 +1,4 @@
+import ProcessInfo from "@/components/ProcessInfo";
 import ServiceInquiry from "@/components/ServiceInquiry";
 
 export default function Faq() {
@@ -11,6 +12,7 @@ export default function Faq() {
           </em>
         </h1>
         <ServiceInquiry />
+        <ProcessInfo />
       </div>
     </div>
   );
