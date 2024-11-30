@@ -20,10 +20,9 @@ export default function Navbar() {
           ["자주 묻는 질문", "/faq"],
           ["새소식", "/news"],
           ["상담문의", "/counsel"],
-        ].map(([title, url]) => (
-          <li className="mx-[16px]">
+        ].map(([title, url], i) => (
+          <li className="mx-[16px]" key={url}>
             <Link
-              key={url}
               href={url}
               className={`relative text-[18px] font-semibold leading-[18px] px-[4px] h-full flex items-center after:content-[''] after:bg-mint after:absolute after:bottom-0 after:left-0  after:h-[4px] after:duration-[400ms] after:transition-[width] after:ease-custom hover:after:w-full ${
                 url === pathname ? "after:w-full" : "after:w-0 after:opacity-40"
