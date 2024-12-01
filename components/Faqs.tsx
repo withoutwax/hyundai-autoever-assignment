@@ -64,6 +64,7 @@ const TEST_DATA = [
 
 export default function Faqs() {
   const [tab, setTab] = useState("서비스 도입");
+  const [search, setSearch] = useState("");
 
   return (
     <div>
@@ -101,15 +102,26 @@ export default function Faqs() {
       </ul>
       <form className="mb-[24px]">
         <div className="bg-[#f8f8f8] p-[24px] flex justify-center items-center">
-          <div className="relative">
+          <div className="relative flex justify-end items-center border border-midnight bg-white">
             <input
               type="search"
               placeholder="찾으시는 내용을 입력해 주세요"
-              className="border border-midnight h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[18px]"
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+              className="w-full h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[18px] text-[18px] appearance-none"
             ></input>
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="absolute inset-y-0 right-[55px] h-full w-[40px] text-[0px] before:m-auto before:block before:content-[''] before:bg-[url('/ic_clear.svg')] before:h-[24px] before:w-[24px] before:aspect-square before:bg-[auto_100%] before:bg-no-repeat"
+              >
+                다시입력
+              </button>
+            )}
             <button
               type="button"
-              className="absolute right-0 inset-y-0 aspect-square h-full text-[0px] before:m-auto before:block before:content-[''] before:bg-[url('/ic_search.svg')] before:h-[32px] before:w-[32px] before:aspect-square before:bg-[auto_100%] before:bg-no-repeat"
+              className="absolute inset-y-0 aspect-square right-0 h-full text-[0px] before:m-auto before:block before:content-[''] before:bg-[url('/ic_search.svg')] before:h-[32px] before:w-[32px] before:aspect-square before:bg-[auto_100%] before:bg-no-repeat"
             >
               검색
             </button>
