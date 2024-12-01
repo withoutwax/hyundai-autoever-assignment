@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         mint: "#70d7bf",
+        midnight: "#08141f",
       },
       fontFamily: {
         sans: ["var(--kia-signature-fix)"],

@@ -1,6 +1,7 @@
 import AppInfo from "@/components/AppInfo";
 import ProcessInfo from "@/components/ProcessInfo";
 import ServiceInquiry from "@/components/ServiceInquiry";
+import Faqs from "@/components/Faqs";
 
 export default function Faq() {
   return (
@@ -12,6 +13,7 @@ export default function Faq() {
             궁금하신 내용을 빠르게 찾아보세요.
           </em>
         </h1>
+        <Faqs />
         <ServiceInquiry />
         <ProcessInfo />
         <AppInfo />
