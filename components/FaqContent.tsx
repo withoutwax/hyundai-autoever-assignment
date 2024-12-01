@@ -2,7 +2,6 @@
 
 import * as Accordion from "@radix-ui/react-accordion";
 import { useState } from "react";
-import FaqItem from "./FaqItem";
 
 export default function FaqContent({ data }: { data: any }) {
   const [activeCategory, setActiveCategory] = useState("전체");
