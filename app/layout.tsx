@@ -34,9 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className={`${kiaSignatureFix.variable} `}>
+      <body
+        className={`${kiaSignatureFix.variable} min-h-screen flex flex-col`}
+      >
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
         <ScrollToTopButton />
         <Footer />
       </body>
