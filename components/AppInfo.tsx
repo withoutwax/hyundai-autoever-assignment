@@ -1,6 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPageData } from "@/app/actions";
 
 export default function AppInfo() {
+  const { data } = useQuery({
+    queryKey: ["page"],
+    queryFn: fetchPageData,
+  });
+
+  // console.log("App Info:", data.appInfo);
+
   return (
     <div className="mt-[64px] bg-[#f8f8f8] rounded-[16px] p-[40px] flex flex-col items-center justify-center">
       <h2 className="mb-[32px] text-[32px]">
@@ -9,7 +20,7 @@ export default function AppInfo() {
       </h2>
       <div className="flex">
         <Link
-          href="https://play.google.com/store/apps/details?id=kor.mop.user.app"
+          href={data.appInfo?.googlePlay}
           target="_blank"
           rel="noreferrer"
           className="bg-white rounded-[18px] mx-[16px] w-[392px] h-[64px] flex justify-center items-center font-bold text-[18px] before:bg-[url('/logo_googleplay.svg')] before:bg-no-repeat before:bg-contain before:w-[32px] before:h-[32px] before:mr-[4px]"
@@ -17,7 +28,7 @@ export default function AppInfo() {
           Google Play
         </Link>
         <Link
-          href="https://apps.apple.com/kr/app/%EC%9C%84%EB%B8%94-%EB%B9%84%EC%A6%88/id1598065794"
+          href={data.appInfo?.appStore}
           target="_blank"
           rel="noreferrer"
           className="bg-white rounded-[18px] mx-[16px] w-[392px] h-[64px] flex justify-center items-center font-bold text-[18px] before:bg-[url('/logo_appstore.svg')] before:bg-no-repeat before:bg-contain before:w-[32px] before:h-[32px] before:mr-[4px]"

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function ScrollToTopButton() {
   const [mousePressed, setMousePressed] = useState(false);
+  const queryClient = useQueryClient();
 
   return (
     <div className="sticky bottom-0 left-0 w-full z-[99] pointer-events-none block">
@@ -14,6 +16,7 @@ export default function ScrollToTopButton() {
           }`}
           onMouseDown={() => {
             console.log("Mouse Pressed");
+            queryClient.invalidateQueries();
             setMousePressed(true);
           }}
           onMouseUp={() => {

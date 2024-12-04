@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const kiaSignatureFix = localFont({
   src: [
@@ -37,10 +38,12 @@ export default function RootLayout({
       <body
         className={`${kiaSignatureFix.variable} min-h-screen flex flex-col`}
       >
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <ScrollToTopButton />
-        <Footer />
+        <ReactQueryProvider>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <ScrollToTopButton />
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

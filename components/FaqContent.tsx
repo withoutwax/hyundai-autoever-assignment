@@ -2,12 +2,19 @@
 
 import * as Accordion from "@radix-ui/react-accordion";
 import { useState } from "react";
+import { FaqDataProps, FaqContentProps } from "@/types";
 
-export default function FaqContent({ data }: { data: any }) {
+export default function FaqContent({ data }: { data: FaqContentProps[] }) {
   const [activeCategory, setActiveCategory] = useState("전체");
+  const [limit, setLimit] = useState(10);
 
-  const categoryList = [...new Set(data.faq.map((faq: any) => faq.category))];
-  console.log(data);
+  const categoryList = [
+    ...new Set(data.map((faq: FaqContentProps) => faq.category)),
+  ];
+
+  const categoryData = data.filter((faq: FaqContentProps, _: number) => {
+    return activeCategory === "전체" || faq.category === activeCategory;
+  });
 
   return (
     <div className="">
@@ -16,6 +23,7 @@ export default function FaqContent({ data }: { data: any }) {
           className="h-[48px] inline-block cursor-pointer"
           onClick={() => {
             setActiveCategory("전체");
+            setLimit(10);
           }}
         >
           <input
@@ -37,12 +45,13 @@ export default function FaqContent({ data }: { data: any }) {
             전체
           </i>
         </label>
-        {categoryList.map((category: any, i: number) => (
+        {categoryList.map((category: string, i: number) => (
           <label
             className="h-[48px] inline-block cursor-pointer"
             key={i}
             onClick={() => {
               setActiveCategory(category);
+              setLimit(10);
             }}
           >
             <input
@@ -71,12 +80,8 @@ export default function FaqContent({ data }: { data: any }) {
         className="border-t-2 border-midnight"
         collapsible
       >
-        {data.faq
-          .filter(
-            (faq: any) =>
-              activeCategory === "전체" || faq.category === activeCategory
-          )
-          .map((faq: any, i: number) => (
+        {categoryData.slice(0, limit).map((faq: FaqContentProps, i: number) => {
+          return (
             <Accordion.Item
               key={String(i) + faq.category + faq.question}
               value={String(i) + faq.category + faq.question}
@@ -84,10 +89,10 @@ export default function FaqContent({ data }: { data: any }) {
               <Accordion.Header className="relative group">
                 <Accordion.Trigger
                   className="border-b border-[#e6e8e9] w-full flex items-center p-[16px] text-midnight font-semibold text-[20px] py-[24px] 
-                  data-[state=open]:bg-[#f8f8f8]
-                  after:content-[''] after:absolute after:bg-[url('/ic_arrow.svg')] after:bg-no-repeat after:bg-[auto_100%] after:right-[22px] after:w-[32px] after:h-[32px]  
-                  after:transition-transform after:ease-custom after:duration-300 group-data-[state=open]:after:rotate-180
-                "
+            data-[state=open]:bg-[#f8f8f8]
+            after:content-[''] after:absolute after:bg-[url('/ic_arrow.svg')] after:bg-no-repeat after:bg-[auto_100%] after:right-[22px] after:w-[32px] after:h-[32px]  
+            after:transition-transform after:ease-custom after:duration-300 group-data-[state=open]:after:rotate-180
+          "
                 >
                   <em className="w-[208px] not-italic text-center px-[24px] text-[#697278] font-normal">
                     {faq.category}
@@ -108,8 +113,20 @@ export default function FaqContent({ data }: { data: any }) {
                 </div>
               </Accordion.Content>
             </Accordion.Item>
-          ))}
+          );
+        })}
       </Accordion.Root>
+
+      {limit < categoryData.length && (
+        <button
+          onClick={() => {
+            setLimit(limit + 10);
+          }}
+          className="text-[20px] w-full text-center my-10"
+        >
+          +더보기
+        </button>
+      )}
     </div>
   );
 }
