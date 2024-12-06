@@ -9,6 +9,8 @@ export default {
   theme: {
     screens: {
       md: "744px",
+      lg: "1024px",
+      xl: "1440px",
     },
     extend: {
       colors: {

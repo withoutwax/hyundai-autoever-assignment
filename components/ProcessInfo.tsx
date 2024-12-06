@@ -42,7 +42,7 @@ export default function ProcessInfo() {
               ></i>
               <span
                 className={`flex flex-col text-[16px] md:text-[18px] lg:text-[16px] leading-[22.4px] md:leading-[25px] lg:leading-[27px] ${
-                  i === 0 ? "before:hidden" : ""
+                  i === 0 ? "before:lg:hidden" : ""
                 } before:hidden before:lg:inline-block before:content-[''] before:absolute before:bg-[url('/ic_step_arrow.svg')] before:bg-no-repeat before:bg-contain before:h-[24px] before:w-[24px] before:-left-4`}
               >
                 <strong>{title}</strong>

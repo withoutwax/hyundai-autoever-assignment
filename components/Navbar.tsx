@@ -18,14 +18,14 @@ export default function Navbar() {
         >
           Wible Biz
         </Link>
-        <ul className="hidden flex-1 lg:flex justify-end items-cneter">
+        <ul className="hidden flex-1 lg:flex justify-end items-center">
           {[
             ["서비스 소개", "/guide"],
             ["자주 묻는 질문", "/faq"],
             ["새소식", "/news"],
             ["상담문의", "/counsel"],
           ].map(([title, url], i) => (
-            <li className="mx-[16px]" key={uuidv4()}>
+            <li className="mx-[16px] h-[80px]" key={uuidv4()}>
               <Link
                 href={url}
                 className={`relative text-[18px] font-semibold leading-[18px] px-[4px] h-full flex items-center after:content-[''] after:bg-mint after:absolute after:bottom-0 after:left-0  after:h-[4px] after:duration-[400ms] after:transition-[width] after:ease-custom hover:after:w-full ${

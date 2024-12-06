@@ -102,7 +102,7 @@ export default function Faqs() {
       </ul>
       <form className="mb-[16px] lg:mb-[24px]">
         <div className="md:bg-[#f8f8f8] p-0 md:p-[16px] lg:p-[24px] flex justify-center items-center">
-          <div className="relative flex md:justify-end items-center border border-midnight bg-white w-full">
+          <div className="relative flex md:justify-end items-center border border-midnight bg-white w-full md:w-[400px]">
             <input
               type="search"
               placeholder="찾으시는 내용을 입력해 주세요"
