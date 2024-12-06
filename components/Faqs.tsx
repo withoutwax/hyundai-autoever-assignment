@@ -34,7 +34,7 @@ export default function Faqs() {
   }) => {
     return (
       <div className="flex justify-between my-[16px] lg:my-[24px]">
-        <h2 className="text-[16px]">
+        <h2 className="text-[16px] lg:text-[24px]">
           검색결과 총 <span className="text-mint">{searchedData.length}</span>{" "}
           건
         </h2>
@@ -46,7 +46,7 @@ export default function Faqs() {
               searchInput.current.value = "";
             }
           }}
-          className="text-[14px] flex items-center before:bg-[url('/ic_init.svg')] before:inline-block before:bg-[auto_100%] before:bg-no-repeat before:w-[20px] before:lg:w-[24px] before:h-[20px] before:lg:h-[24px] before:content-[''] before:mr-[2px]"
+          className="text-[14px] lg:text-[16px] flex items-center before:bg-[url('/ic_init.svg')] before:inline-block before:bg-[auto_100%] before:bg-no-repeat before:w-[20px] before:lg:w-[24px] before:h-[20px] before:lg:h-[24px] before:content-[''] before:mr-[2px]"
         >
           검색초기화
         </button>
