@@ -80,7 +80,7 @@ export default function Navbar() {
         </div>
       </header>
       <nav
-        className={`bg-white fixed inset-0 flex-1 w-screen z-40 transition-all duration-[700ms] ease-custom ${
+        className={`lg:hidden bg-white fixed inset-0 flex-1 w-screen z-40 transition-all duration-[700ms] ease-custom ${
           navMenu ? "" : "-translate-x-full"
         }`}
       >
