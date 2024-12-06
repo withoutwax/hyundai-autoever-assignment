@@ -23,7 +23,7 @@ export default async function Faq() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="px-[48px] pb-[96px]">
+      <div className="px-[48px] pb-[80px] lg:pb-[96px]">
         <div className="max-w-[1240px] mx-auto">
           <h1 className="flex flex-col justify-center items-center h-[222px]">
             자주 묻는 질문
