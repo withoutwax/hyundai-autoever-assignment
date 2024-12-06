@@ -19,9 +19,9 @@ export default function FaqContent({ data }: { data: FaqContentProps[] }) {
 
   return (
     <div className="">
-      <div className="mb-[24px]">
+      <div className="mb-[16px] lg:mb-[24px]">
         <label
-          className="h-[48px] inline-block cursor-pointer"
+          className="h-[44px] lg:h-[48px] inline-block cursor-pointer"
           onClick={() => {
             setActiveCategory("전체");
             setLimit(10);
@@ -48,7 +48,7 @@ export default function FaqContent({ data }: { data: FaqContentProps[] }) {
         </label>
         {categoryList.map((category: string) => (
           <label
-            className="h-[48px] inline-block cursor-pointer"
+            className="h-[44px] lg:h-[48px] inline-block cursor-pointer"
             key={uuidv4()}
             onClick={() => {
               setActiveCategory(category);
@@ -106,7 +106,9 @@ export default function FaqContent({ data }: { data: FaqContentProps[] }) {
                       </em>
                     )}
                   </div>
-                  <strong className="flex-1 text-left">{faq.question}</strong>
+                  <strong className="flex-1 text-left mr-[88px]">
+                    {faq.question}
+                  </strong>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="border-b border-[#e6e8e9] duration-[100ms] transition-[max-height] ease-in-out h-full overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">

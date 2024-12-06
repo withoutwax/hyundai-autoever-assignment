@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col items-start lg:items-end">
           <span className="text-white font-bold space-x-[24px] lg:mb-[10px] h-[52px] lg:h-auto flex items-center">
             <button className="hover:underline">개인정보 처리방침</button>
-            <button className="hover:underline">이용약관</button>
+            <button className="hover:underline font-normal">이용약관</button>
           </span>
           <address className="text-[#81898f] not-italic text-[14px] leading-[24px]">
             <span className="mr-[12px]">

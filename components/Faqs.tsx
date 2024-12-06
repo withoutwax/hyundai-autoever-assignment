@@ -56,9 +56,9 @@ export default function Faqs() {
 
   return (
     <div>
-      <ul className="flex mb-[48px]">
+      <ul className="flex mb-[32px] lg:mb-[48px]">
         <li
-          className={`w-full h-[56px] ${
+          className={`w-full h-[46px] lg:h-[56px] ${
             tab === "서비스 도입"
               ? "bg-midnight text-white font-semibold"
               : "bg-white text-midnight border border-[#cdd0d2]"
@@ -73,13 +73,13 @@ export default function Faqs() {
                 searchInput.current.value = "";
               }
             }}
-            className="text-[20px] flex justify-center items-center p-[8px] h-full"
+            className="text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
           >
             <span>서비스 도입</span>
           </Link>
         </li>
         <li
-          className={`w-full h-[56px] ${
+          className={`w-full h-[46px] lg:h-[56px] ${
             tab === "서비스 이용"
               ? "bg-midnight text-white font-semibold"
               : "bg-white text-midnight border border-[#cdd0d2]"
@@ -94,20 +94,20 @@ export default function Faqs() {
                 searchInput.current.value = "";
               }
             }}
-            className="text-[20px] flex justify-center items-center p-[8px] h-full"
+            className="text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
           >
             <span>서비스 이용</span>
           </Link>
         </li>
       </ul>
-      <form className="mb-[24px]">
-        <div className="bg-[#f8f8f8] p-[24px] flex justify-center items-center">
+      <form className="mb-[16px] lg:mb-[24px]">
+        <div className="bg-[#f8f8f8] p-[16px] lg:p-[24px] flex justify-center items-center">
           <div className="relative flex justify-end items-center border border-midnight bg-white">
             <input
               type="search"
               placeholder="찾으시는 내용을 입력해 주세요"
               ref={searchInput}
-              className="w-full h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[18px] text-[18px] appearance-none"
+              className="w-full h-[46px] lg:h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[16px] placeholder:lg:text-[18px] text-[18px] appearance-none"
             ></input>
             {search && (
               <button
