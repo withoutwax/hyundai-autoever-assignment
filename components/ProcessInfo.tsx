@@ -27,8 +27,10 @@ const PROCESS_INFO = [
 export default function ProcessInfo() {
   return (
     <>
-      <h2 className="mt-[48px] lg:mt-[64px] mb-[24px]">이용 프로세스 안내</h2>
-      <ol className="flex flex-col lg:flex-row space-y-[24px] lg:space-y-0">
+      <h2 className="mt-[48px] lg:mt-[64px] mb-[16px] md:mb-[24px] text-[20px] md:text-[24px]">
+        이용 프로세스 안내
+      </h2>
+      <ol className="flex flex-col lg:flex-row space-y-[20px] md:space-y-[24px] lg:space-y-0">
         {PROCESS_INFO.map(({ icon, title, description }, i) => {
           return (
             <li
@@ -36,15 +38,15 @@ export default function ProcessInfo() {
               key={uuidv4()}
             >
               <i
-                className={`${icon} w-[48px] lg:w-[56px] h-[48px] lg:h-[56px] aspect-square bg-no-repeat bg-contain lg:mb-[8px]`}
+                className={`${icon} w-[40px] md:w-[48px] lg:w-[56px] h-[40px] md:h-[48px] lg:h-[56px] aspect-square bg-no-repeat bg-contain lg:mb-[8px]`}
               ></i>
               <span
-                className={`flex flex-col text-[18px] lg:text-[16px] leading-[25px] lg:leading-[27px] ${
+                className={`flex flex-col text-[16px] md:text-[18px] lg:text-[16px] leading-[22.4px] md:leading-[25px] lg:leading-[27px] ${
                   i === 0 ? "before:hidden" : ""
                 } before:hidden before:lg:inline-block before:content-[''] before:absolute before:bg-[url('/ic_step_arrow.svg')] before:bg-no-repeat before:bg-contain before:h-[24px] before:w-[24px] before:-left-4`}
               >
                 <strong>{title}</strong>
-                <em className="text-[16px] leading-[22.4px] lg:leading-[24px] not-italic font-normal text-[#36434c] mt-[8px]">
+                <em className="text-[14px] md:text-[16px] leading-[19.6px] md:leading-[22.4px] lg:leading-[24px] not-italic font-normal text-[#36434c] mt-[6px] md:mt-[8px]">
                   {description}
                 </em>
               </span>

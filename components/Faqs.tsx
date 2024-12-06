@@ -33,8 +33,8 @@ export default function Faqs() {
     setSearch: Dispatch<SetStateAction<string>>;
   }) => {
     return (
-      <div className="flex justify-between my-[24px]">
-        <h2>
+      <div className="flex justify-between my-[16px] lg:my-[24px]">
+        <h2 className="text-[16px]">
           검색결과 총 <span className="text-mint">{searchedData.length}</span>{" "}
           건
         </h2>
@@ -46,7 +46,7 @@ export default function Faqs() {
               searchInput.current.value = "";
             }
           }}
-          className="flex items-center before:bg-[url('/ic_init.svg')] before:inline-block before:bg-[auto_100%] before:bg-no-repeat before:w-[24px] before:h-[24px] before:content-[''] before:mr-[2px]"
+          className="text-[14px] flex items-center before:bg-[url('/ic_init.svg')] before:inline-block before:bg-[auto_100%] before:bg-no-repeat before:w-[20px] before:lg:w-[24px] before:h-[20px] before:lg:h-[24px] before:content-[''] before:mr-[2px]"
         >
           검색초기화
         </button>
@@ -56,9 +56,9 @@ export default function Faqs() {
 
   return (
     <div>
-      <ul className="flex mb-[32px] lg:mb-[48px]">
+      <ul className="flex mb-[24px] md:mb-[32px] lg:mb-[48px]">
         <li
-          className={`w-full h-[46px] lg:h-[56px] ${
+          className={`w-full h-[38px] md:h-[46px] lg:h-[56px] ${
             tab === "서비스 도입"
               ? "bg-midnight text-white font-semibold"
               : "bg-white text-midnight border border-[#cdd0d2]"
@@ -73,13 +73,13 @@ export default function Faqs() {
                 searchInput.current.value = "";
               }
             }}
-            className="text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
+            className="text-[14px] md:text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
           >
             <span>서비스 도입</span>
           </Link>
         </li>
         <li
-          className={`w-full h-[46px] lg:h-[56px] ${
+          className={`w-full h-[38px] md:h-[46px] lg:h-[56px] ${
             tab === "서비스 이용"
               ? "bg-midnight text-white font-semibold"
               : "bg-white text-midnight border border-[#cdd0d2]"
@@ -94,20 +94,20 @@ export default function Faqs() {
                 searchInput.current.value = "";
               }
             }}
-            className="text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
+            className="text-[14px] md:text-[16px] lg:text-[20px] flex justify-center items-center p-[8px] h-full"
           >
             <span>서비스 이용</span>
           </Link>
         </li>
       </ul>
       <form className="mb-[16px] lg:mb-[24px]">
-        <div className="bg-[#f8f8f8] p-[16px] lg:p-[24px] flex justify-center items-center">
-          <div className="relative flex justify-end items-center border border-midnight bg-white">
+        <div className="md:bg-[#f8f8f8] p-0 md:p-[16px] lg:p-[24px] flex justify-center items-center">
+          <div className="relative flex md:justify-end items-center border border-midnight bg-white w-full">
             <input
               type="search"
               placeholder="찾으시는 내용을 입력해 주세요"
               ref={searchInput}
-              className="w-full h-[46px] lg:h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[16px] placeholder:lg:text-[18px] text-[18px] appearance-none"
+              className="w-full h-[40px] md:h-[46px] lg:h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[14x] placeholder:md:text-[16px] placeholder:lg:text-[18px] text-[14px] md:text-[18px] appearance-none"
             ></input>
             {search && (
               <button

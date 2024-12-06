@@ -2,18 +2,19 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-midnight px-[48px]">
-      <div className="w-full max-w-[1660px] mx-auto pt-[34px] pb-[44px] lg:py-0 lg:h-[176px] gap-6 lg:gap-0 flex flex-col lg:flex-row items-start lg:items-center justify-between">
+    <footer className="bg-midnight px-[24px] md:px-[48px]">
+      <div className="w-full max-w-[1660px] mx-auto pt-[18px] md:pt-[34px] pb-[29px] md:pb-[44px] lg:py-0 lg:h-[176px] gap-6 lg:gap-0 flex flex-col lg:flex-row items-start lg:items-center justify-between">
         <div className="flex flex-col items-start lg:items-end">
           <span className="text-white font-bold space-x-[24px] lg:mb-[10px] h-[52px] lg:h-auto flex items-center">
             <button className="hover:underline">개인정보 처리방침</button>
             <button className="hover:underline font-normal">이용약관</button>
           </span>
-          <address className="text-[#81898f] not-italic text-[14px] leading-[24px]">
+          <address className="text-[#81898f] not-italic text-[12px] md:text-[14px] leading-[22px] md:leading-[24px]">
             <span className="mr-[12px]">
               서울특별시 서초구 헌릉로 12 {` `}
-              <em className="not-italic">기아㈜</em>
+              <em className="not-italic ml-[12px] md:ml-0">기아㈜</em>
             </span>
+            <br className="md:hidden" />
             <span className="mr-[12px]">
               대표: {` `}
               <i className="not-italic">송호성, 최준영</i>
@@ -23,6 +24,7 @@ export default function Footer() {
               사업자등록번호: {` `}
               <i className="not-italic">119-81-02316</i>
             </span>
+            <br className="md:hidden" />
             <span className="mr-[12px]">
               통신판매번호: {` `}
               <i className="not-italic">2006-07935</i>
@@ -41,7 +43,7 @@ export default function Footer() {
           </address>
         </div>
         <div className="lg:order-first">
-          <p className="text-[#81898f] text-[14px] before:content-[''] before:bg-[url('/logo_kia.svg')] before:bg-no-repeat before:bg-[auto_100%] before:h-[48px] before:lg:h-[56px] before:mb-[2px] before:block">
+          <p className="text-[#81898f] text-[12px] md:text-[14px] before:content-[''] before:bg-[url('/logo_kia.svg')] before:bg-no-repeat before:bg-[auto_100%] before:h-[32px] before:md:h-[48px] before:lg:h-[56px] before:mb-[2px] before:block">
             © 2023 KIA CORP. All Rights Reserved.
           </p>
         </div>
