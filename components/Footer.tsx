@@ -9,33 +9,34 @@ export default function Footer() {
             <button className="hover:underline">개인정보 처리방침</button>
             <button className="hover:underline font-normal">이용약관</button>
           </span>
-          <address className="text-[#81898f] not-italic text-[12px] md:text-[14px] leading-[22px] md:leading-[24px]">
+          <address className="text-[#81898f] not-italic text-[12px] md:text-[14px] leading-[22px] md:leading-[24px] lg:text-right">
             <span className="mr-[12px]">
-              서울특별시 서초구 헌릉로 12 {` `}
+              서울특별시 서초구 헌릉로 12
               <em className="not-italic ml-[12px] md:ml-0">기아㈜</em>
             </span>
             <br className="md:hidden" />
             <span className="mr-[12px]">
-              대표: {` `}
-              <i className="not-italic">송호성, 최준영</i>
+              대표:
+              <i className="not-italic ml-1">송호성,&nbsp;최준영</i>
             </span>
             <br className="lg:hidden" />
             <span className="mr-[12px]">
-              사업자등록번호: {` `}
-              <i className="not-italic">119-81-02316</i>
+              사업자등록번호:
+              <i className="not-italic ml-1">119-81-02316</i>
             </span>
             <br className="md:hidden" />
             <span className="mr-[12px]">
-              통신판매번호: {` `}
-              <i className="not-italic">2006-07935</i>
+              통신판매번호:
+              <i className="not-italic ml-1">2006-07935</i>
             </span>
             <br className="lg:hidden" />
             <span className="mr-[12px]">
-              고객센터: {` `}
-              <i className="not-italic">1833-4964</i>
+              고객센터:
+              <i className="not-italic ml-1">1833-4964</i>
             </span>
+            <br className="xl:hidden" />
             <span className="mr-[12px]">
-              제휴문의: {` `}
+              제휴문의:&nbsp;
               <Link href="mailto:wible.biz@kia.com" className="underline">
                 wible.biz@kia.com
               </Link>

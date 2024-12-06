@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 bg-white px-[48px] flex items-center justify-between h-[56px] lg:h-[80px] z-50">
+      <header className="sticky top-0 bg-white px-[48px] flex items-center justify-between h-[56px] lg:h-[80px] z-50 max-w-[1660px] mx-auto w-full">
         <Link
           href="/"
           className="bg-[url('/logo_wible_lg.svg')] w-[120px] lg:w-[160px] h-full bg-no-repeat bg-center bg-contain text-[0px]"

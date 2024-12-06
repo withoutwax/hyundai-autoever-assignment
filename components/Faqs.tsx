@@ -56,7 +56,7 @@ export default function Faqs() {
 
   return (
     <div>
-      <ul className="flex mb-[24px] md:mb-[32px] lg:mb-[48px]">
+      <ul className="flex mb-[24px] md:mb-[32px] lg:mb-[40px] xl:mb-[48px]">
         <li
           className={`w-full h-[38px] md:h-[46px] lg:h-[56px] ${
             tab === "서비스 도입"
@@ -101,7 +101,7 @@ export default function Faqs() {
         </li>
       </ul>
       <form className="mb-[16px] lg:mb-[24px]">
-        <div className="md:bg-[#f8f8f8] p-0 md:p-[16px] lg:p-[24px] flex justify-center items-center">
+        <div className="md:bg-[#f8f8f8] p-0 md:p-[16px] lg:p-[20px] xl:p-[24px] flex justify-center items-center">
           <div className="relative flex md:justify-end items-center border border-midnight bg-white w-full md:w-[400px]">
             <input
               type="search"
