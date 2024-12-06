@@ -13,7 +13,7 @@ export default function AppInfo() {
   // console.log("App Info:", data.appInfo);
 
   return (
-    <div className="mt-[64px] bg-[#f8f8f8] rounded-[16px] p-[32px] lg:p-[40px] flex flex-col items-center justify-center">
+    <div className="mt-[48px] lg:mt-[64px] bg-[#f8f8f8] rounded-[16px] p-[32px] lg:p-[40px] flex flex-col items-center justify-center">
       <h2 className="mb-[32px] text-[20px] lg:text-[32px]">
         <em className="not-italic text-mint">위블 비즈 App</em>
         {` `}지금 만나보세요!
