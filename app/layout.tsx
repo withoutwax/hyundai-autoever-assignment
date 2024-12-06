@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="kr">
       <body
-        className={`${kiaSignatureFix.variable} min-h-screen flex flex-col`}
+        className={`${kiaSignatureFix.variable} min-h-screen flex flex-col break-keep`}
       >
         <ReactQueryProvider>
           <Navbar />
