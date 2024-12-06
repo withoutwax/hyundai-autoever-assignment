@@ -3,6 +3,7 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { useState } from "react";
 import { FaqDataProps, FaqContentProps } from "@/types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function FaqContent({ data }: { data: FaqContentProps[] }) {
   const [activeCategory, setActiveCategory] = useState("전체");
@@ -45,10 +46,10 @@ export default function FaqContent({ data }: { data: FaqContentProps[] }) {
             전체
           </i>
         </label>
-        {categoryList.map((category: string, i: number) => (
+        {categoryList.map((category: string) => (
           <label
             className="h-[48px] inline-block cursor-pointer"
-            key={i}
+            key={uuidv4()}
             onClick={() => {
               setActiveCategory(category);
               setLimit(10);
@@ -81,11 +82,9 @@ export default function FaqContent({ data }: { data: FaqContentProps[] }) {
         collapsible
       >
         {categoryData.slice(0, limit).map((faq: FaqContentProps, i: number) => {
+          const uuid = uuidv4();
           return (
-            <Accordion.Item
-              key={String(i) + faq.category + faq.question}
-              value={String(i) + faq.category + faq.question}
-            >
+            <Accordion.Item key={uuid} value={uuid}>
               <Accordion.Header className="relative group">
                 <Accordion.Trigger
                   className="border-b border-[#e6e8e9] w-full flex items-center p-[16px] text-midnight font-semibold text-[20px] py-[24px] 

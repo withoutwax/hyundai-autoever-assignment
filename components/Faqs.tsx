@@ -8,6 +8,7 @@ import { fetchFaqData } from "@/app/actions";
 import NoResult from "./NoResult";
 import IsLoading from "@/components/IsLoading";
 import { FaqDataProps, FaqContentProps } from "@/types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Faqs() {
   const [tab, setTab] = useState("서비스 도입");
@@ -136,7 +137,7 @@ export default function Faqs() {
       </form>
       {isPending ? <IsLoading /> : !data && <NoResult />}
       {data &&
-        data.map((data: FaqDataProps, i: number) => {
+        data.map((data: FaqDataProps) => {
           const searchedData = data.faq.filter(
             (faq: FaqContentProps) =>
               faq.question.includes(search) || faq.answer.includes(search)
@@ -144,25 +145,25 @@ export default function Faqs() {
 
           if (data.tab === "서비스도입" && tab === "서비스 도입") {
             return (
-              <>
+              <div key={uuidv4()}>
                 {search &&
                   searchResultHeader({
                     searchedData,
                     setSearch,
                   })}
-                <FaqContent data={searchedData} key={String(i) + data.tab} />
-              </>
+                <FaqContent data={searchedData} />
+              </div>
             );
           } else if (data.tab === "서비스이용" && tab === "서비스 이용") {
             return (
-              <>
+              <div key={uuidv4()}>
                 {search &&
                   searchResultHeader({
                     searchedData,
                     setSearch,
                   })}
-                <FaqContent data={searchedData} key={String(i) + data.tab} />
-              </>
+                <FaqContent data={searchedData} />
+              </div>
             );
           }
         })}

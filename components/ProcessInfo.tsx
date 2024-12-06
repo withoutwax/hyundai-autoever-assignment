@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const PROCESS_INFO = [
   {
     icon: "bg-[url('/ic_process01.svg')]",
@@ -31,7 +33,7 @@ export default function ProcessInfo() {
           return (
             <li
               className="mx-[16px] px-[24px] w-full flex flex-col relative"
-              key={i}
+              key={uuidv4()}
             >
               <i
                 className={`${icon} w-[56px] h-[56px] aspect-square bg-no-repeat bg-contain mb-[8px]`}

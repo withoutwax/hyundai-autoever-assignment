@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export default function Navbar() {
           ["새소식", "/news"],
           ["상담문의", "/counsel"],
         ].map(([title, url], i) => (
-          <li className="mx-[16px]" key={url}>
+          <li className="mx-[16px]" key={uuidv4()}>
             <Link
               href={url}
               className={`relative text-[18px] font-semibold leading-[18px] px-[4px] h-full flex items-center after:content-[''] after:bg-mint after:absolute after:bottom-0 after:left-0  after:h-[4px] after:duration-[400ms] after:transition-[width] after:ease-custom hover:after:w-full ${
