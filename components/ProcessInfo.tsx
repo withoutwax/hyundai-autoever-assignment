@@ -30,7 +30,7 @@ export default function ProcessInfo() {
       <h2 className="mt-[48px] xl:mt-[64px] mb-[16px] md:mb-[24px] text-[20px] md:text-[24px]">
         이용 프로세스 안내
       </h2>
-      <ol className="flex flex-col lg:flex-row space-y-[20px] md:space-y-[24px] lg:space-y-0 space-x-[32px]">
+      <ol className="flex flex-col lg:flex-row space-y-[20px] md:space-y-[24px] lg:space-y-0 lg:space-x-[32px]">
         {PROCESS_INFO.map(({ icon, title, description }, i) => {
           return (
             <li
