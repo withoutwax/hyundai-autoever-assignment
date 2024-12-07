@@ -1,13 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import ModalButton from "@/components/ModalButton";
+import { useQuery } from "@tanstack/react-query";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Footer() {
+  const { data } = useQuery({
+    queryKey: ["terms"],
+    queryFn: async () => {
+      const res = fetch("http://localhost:3001/terms");
+      return (await res).json();
+    },
+  });
+
+  // console.log("Footer:", data, isPending, error);
+
   return (
     <footer className="bg-midnight px-[24px] md:px-[48px]">
       <div className="w-full max-w-[1660px] mx-auto pt-[18px] md:pt-[34px] pb-[29px] md:pb-[44px] lg:py-0 lg:h-[176px] gap-6 lg:gap-0 flex flex-col lg:flex-row items-start lg:items-center justify-between">
         <div className="flex flex-col items-start lg:items-end">
-          <span className="text-white font-bold space-x-[24px] lg:mb-[10px] h-[52px] lg:h-auto flex items-center">
-            <button className="hover:underline">개인정보 처리방침</button>
-            <button className="hover:underline font-normal">이용약관</button>
+          <span className="text-white font-bold lg:mb-[10px] h-[52px] lg:h-auto flex gap-[24px] items-center">
+            {data &&
+              data.map((item: any) => (
+                <ModalButton
+                  title={item.title}
+                  content={item.content}
+                  key={uuidv4()}
+                />
+              ))}
           </span>
           <address className="text-[#81898f] not-italic text-[12px] md:text-[14px] leading-[22px] md:leading-[24px] lg:text-right">
             <span className="mr-[12px]">
