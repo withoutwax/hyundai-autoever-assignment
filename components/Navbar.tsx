@@ -109,6 +109,7 @@ export default function Navbar() {
             >
               <Link
                 href={url}
+                onClick={() => toggleMobileNav(false)}
                 className={`relative text-[24px] text-center font-semibold leading-[56px] px-[4px] h-full flex justify-center items-center ${
                   url === pathname ? "text-mint" : ""
                 } `}
