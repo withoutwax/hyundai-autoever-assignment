@@ -17,7 +17,9 @@ export default function SearchAlertModal({
     >
       <div className="relative bg-white text-black px-[40px] w-[425px]">
         <div className="flex flex-col items-center py-[40px] gap-[24px]">
-          <p className="text-[18px]">검색어는 2글자 이상 입력해주세요.</p>
+          <p className="text-[14px] md:text-[16px] lg:text-[18px]">
+            검색어는 2글자 이상 입력해주세요.
+          </p>
           <button
             type="button"
             onClick={() => toggleModal(false)}
