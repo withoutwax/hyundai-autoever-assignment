@@ -7,5 +7,6 @@ export interface FaqContentProps {
 
 export interface FaqDataProps {
   tab: string;
+  categories: string[];
   faq: FaqContentProps[];
 }

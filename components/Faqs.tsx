@@ -9,10 +9,14 @@ import NoResult from "./NoResult";
 import IsLoading from "@/components/IsLoading";
 import { FaqDataProps, FaqContentProps } from "@/types";
 import { v4 as uuidv4 } from "uuid";
+import SearchAlertModal from "./SearchAlertModal";
+
+const SEARCH_LIMIT = 2;
 
 export default function Faqs() {
   const [tab, setTab] = useState("서비스 도입");
   const [search, setSearch] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const searchInput = useRef<HTMLInputElement>(null);
 
   const { isPending, isError, data, error } = useQuery({
@@ -23,7 +27,30 @@ export default function Faqs() {
     },
     initialData: fetchFaqData,
   });
-  console.log("FAQ", data, isPending, isError, error);
+
+  // console.log("FAQ", data, isPending, isError, error);
+
+  const toggleModal = (state: boolean) => {
+    if (state) {
+      setModalOpen(true);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    } else {
+      setModalOpen(false);
+
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
+    }
+  };
+
+  const handleSearch = (searchValue: string | undefined) => {
+    if (typeof searchValue === "string" && searchValue.length < SEARCH_LIMIT) {
+      toggleModal(true);
+      return;
+    }
+    setSearch(searchValue || "");
+  };
 
   const searchResultHeader = ({
     searchedData,
@@ -109,7 +136,7 @@ export default function Faqs() {
               ref={searchInput}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  setSearch(searchInput.current?.value || "");
+                  handleSearch(searchInput.current?.value);
                 }
               }}
               className="w-full h-[40px] md:h-[46px] lg:h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[#b4b9bc] placeholder:text-[14x] placeholder:md:text-[16px] placeholder:lg:text-[18px] text-[14px] md:text-[18px] appearance-none"
@@ -131,7 +158,7 @@ export default function Faqs() {
             <button
               type="button"
               onClick={() => {
-                setSearch(searchInput.current?.value || "");
+                handleSearch(searchInput.current?.value);
               }}
               className="absolute inset-y-0 aspect-square right-0 h-full text-[0px] before:m-auto before:block before:content-[''] before:bg-[url('/ic_search.svg')] before:h-[32px] before:w-[32px] before:aspect-square before:bg-[auto_100%] before:bg-no-repeat"
             >
@@ -156,7 +183,10 @@ export default function Faqs() {
                     searchedData,
                     setSearch,
                   })}
-                <FaqContent data={searchedData} />
+                <FaqContent
+                  data={searchedData}
+                  categoryList={data.categories}
+                />
               </div>
             );
           } else if (data.tab === "서비스이용" && tab === "서비스 이용") {
@@ -167,11 +197,15 @@ export default function Faqs() {
                     searchedData,
                     setSearch,
                   })}
-                <FaqContent data={searchedData} />
+                <FaqContent
+                  data={searchedData}
+                  categoryList={data.categories}
+                />
               </div>
             );
           }
         })}
+      <SearchAlertModal modalOpen={modalOpen} toggleModal={toggleModal} />
     </div>
   );
 }
