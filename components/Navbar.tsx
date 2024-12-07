@@ -18,6 +18,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  const toggleMobileNav = (state: boolean) => {
+    if (state) {
+      setNavMenu(true);
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    } else {
+      setNavMenu(false);
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
+    }
+  };
+
   return (
     <>
       <header
@@ -55,7 +67,7 @@ export default function Navbar() {
           </ul>
           <button
             type="button"
-            onClick={() => setNavMenu(!navMenu)}
+            onClick={() => toggleMobileNav(!navMenu)}
             className={`
             relative text-[0px] w-[20px] h-[20px] aspect-square lg:hidden flex items-center justify-center overflow-hidden
             before:content-[''] before:block before:bg-black before:w-[20px] before:absolute before:top-[3px] before:h-[2px] before:transition-all before:duration-[600ms] before:ease-custom before:transform before:origin-top-right ${
