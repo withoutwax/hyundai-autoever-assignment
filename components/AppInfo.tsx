@@ -23,7 +23,7 @@ export default function AppInfo() {
           href={data.appInfo?.googlePlay}
           target="_blank"
           rel="noreferrer"
-          className="bg-white rounded-[8px] xl:rounded-[18px] mx-[8px] lg:mx-[16px] w-[264px] lg:w-[296px] xl:w-[392px] h-[48px] md:h-[56px] lg:h-[64px] flex justify-center items-center font-bold text-[14px] lg:text-[16px] xl:text-[18px] before:bg-[url('/logo_googleplay.svg')] before:bg-no-repeat before:bg-contain before:w-[24px] before:lg:w-[32px] before:h-[24px] before:lg:h-[32px] before:mr-[4px]"
+          className="bg-white rounded-[8px] mx-[8px] lg:mx-[16px] w-[264px] lg:w-[296px] xl:w-[392px] h-[48px] md:h-[56px] lg:h-[64px] flex justify-center items-center font-bold text-[14px] lg:text-[16px] xl:text-[18px] before:bg-[url('/logo_googleplay.svg')] before:bg-no-repeat before:bg-contain before:w-[24px] before:lg:w-[32px] before:h-[24px] before:lg:h-[32px] before:mr-[4px]"
         >
           Google Play
         </Link>
@@ -31,7 +31,7 @@ export default function AppInfo() {
           href={data.appInfo?.appStore}
           target="_blank"
           rel="noreferrer"
-          className="bg-white rounded-[8px] xl:rounded-[18px] mx-[8px] lg:mx-[16px] w-[264px] lg:w-[296px] xl:w-[392px] h-[48px] md:h-[56px] lg:h-[64px] flex justify-center items-center font-bold text-[14px] lg:text-[16px] xl:text-[18px] before:bg-[url('/logo_appstore.svg')] before:bg-no-repeat before:bg-contain before:w-[24px] before:lg:w-[32px] before:h-[24px] before:lg:h-[32px] before:mr-[4px]"
+          className="bg-white rounded-[8px] mx-[8px] lg:mx-[16px] w-[264px] lg:w-[296px] xl:w-[392px] h-[48px] md:h-[56px] lg:h-[64px] flex justify-center items-center font-bold text-[14px] lg:text-[16px] xl:text-[18px] before:bg-[url('/logo_appstore.svg')] before:bg-no-repeat before:bg-contain before:w-[24px] before:lg:w-[32px] before:h-[24px] before:lg:h-[32px] before:mr-[4px]"
         >
           App Store
         </Link>

@@ -56,7 +56,7 @@ export default function Footer() {
               <i className="not-italic ml-1">1833-4964</i>
             </span>
             <br className="xl:hidden" />
-            <span className="mr-[12px]">
+            <span>
               제휴문의:&nbsp;
               <Link href="mailto:wible.biz@kia.com" className="underline">
                 wible.biz@kia.com

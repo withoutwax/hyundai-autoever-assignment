@@ -34,7 +34,7 @@ export default function ProcessInfo() {
         {PROCESS_INFO.map(({ icon, title, description }, i) => {
           return (
             <li
-              className="mx-[16px] lg:px-0 w-full flex lg:flex-col relative space-x-[16px] lg:space-x-0"
+              className="mx-[16px] lg:px-2 w-full flex lg:flex-col relative space-x-[16px] lg:space-x-0"
               key={uuidv4()}
             >
               <i
@@ -43,10 +43,10 @@ export default function ProcessInfo() {
               <span
                 className={`flex flex-col text-[16px] md:text-[18px] lg:text-[18px] leading-[22.4px] md:leading-[25px] lg:leading-[27px] ${
                   i === 0 ? "before:lg:hidden" : ""
-                } before:hidden before:lg:inline-block before:content-[''] before:absolute before:bg-[url('/ic_step_arrow.svg')] before:bg-no-repeat before:bg-contain before:h-[24px] before:w-[24px] before:-left-10`}
+                } before:hidden before:lg:inline-block before:content-[''] before:absolute before:bg-[url('/ic_step_arrow.svg')] before:bg-no-repeat before:bg-contain before:h-[24px] before:w-[24px] before:-left-9`}
               >
                 <strong>{title}</strong>
-                <em className="text-[14px] md:text-[16px] leading-[19.6px] md:leading-[22.4px] lg:leading-[24px] not-italic font-normal text-[#36434c] mt-[6px] md:mt-[8px]">
+                <em className="text-[14px] md:text-[16px] leading-[19.6px] md:leading-[22.4px] not-italic font-normal text-[#36434c] mt-[6px] md:mt-[8px] max-w-[250px]">
                   {description}
                 </em>
               </span>

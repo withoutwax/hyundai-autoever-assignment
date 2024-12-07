@@ -37,7 +37,7 @@ export default function Navbar() {
           top ? "" : "shadow-[0_4px_32px_0_rgba(0,0,0,.08)]"
         }`}
       >
-        <div className="max-w-[1660px] mx-auto w-full h-[56px] lg:h-[80px] flex items-center justify-between px-[48px]">
+        <div className="max-w-[1775px] mx-auto w-full h-[56px] lg:h-[80px] flex items-center justify-between px-[48px]">
           <Link
             href="/"
             className="bg-[url('/logo_wible_lg.svg')] w-[120px] lg:w-[160px] h-full bg-no-repeat bg-center bg-contain text-[0px]"
