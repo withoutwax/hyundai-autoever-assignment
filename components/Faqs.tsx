@@ -100,13 +100,18 @@ export default function Faqs() {
           </Link>
         </li>
       </ul>
-      <form className="mb-[16px] lg:mb-[24px]">
+      <div className="mb-[16px] lg:mb-[24px]">
         <div className="md:bg-[#f8f8f8] p-0 md:p-[16px] lg:p-[20px] xl:p-[24px] flex justify-center items-center">
           <div className="relative flex md:justify-end items-center border border-midnight bg-white w-full md:w-[400px] lg:w-[480px]">
             <input
-              type="search"
+              type="text"
               placeholder="찾으시는 내용을 입력해 주세요"
               ref={searchInput}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setSearch(searchInput.current?.value || "");
+                }
+              }}
               className="w-full h-[40px] md:h-[46px] lg:h-[56px] pl-[16px] pr-[94px] focus:outline-none placeholder:text-[#b4b9bc] placeholder:text-[14x] placeholder:md:text-[16px] placeholder:lg:text-[18px] text-[14px] md:text-[18px] appearance-none"
             ></input>
             {search && (
@@ -134,7 +139,7 @@ export default function Faqs() {
             </button>
           </div>
         </div>
-      </form>
+      </div>
       {isPending ? <IsLoading /> : !data && <NoResult />}
       {data &&
         data.map((data: FaqDataProps) => {
