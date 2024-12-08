@@ -11,7 +11,7 @@
 ## 시작하는 방법:
 
 우선 `npm run json-server` 커멘드로 백엔드 서버를 시작합니다. 엔드 포인트는 http://localhost:3001 입니다.
-그 후 `npm run dev`로 [http://localhost:3000](http://localhost:3000) 사이트를 테스트 하실 수 있습니다.
+그 후 `npm run dev`로 [http://localhost:3000/faq](http://localhost:3000/faq) 사이트를 테스트 하실 수 있습니다.
 
 둘다 동시에 실행하실 경우 `npm run gogo`로 사용가능 합니다.
 
