@@ -6,13 +6,21 @@ import { useQuery } from "@tanstack/react-query";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Footer() {
-  const { data } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["terms"],
     queryFn: async () => {
       const res = fetch("http://localhost:3001/terms");
       return (await res).json();
     },
   });
+
+  if (isLoading) {
+    return <div>로딩중입니다...</div>;
+  }
+
+  if (error) {
+    return <div>에러가 발생했습니다.</div>;
+  }
 
   // console.log("Footer:", data, isPending, error);
 

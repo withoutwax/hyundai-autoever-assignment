@@ -19,7 +19,7 @@ export default function Faqs() {
   const [modalOpen, setModalOpen] = useState(false);
   const searchInput = useRef<HTMLInputElement>(null);
 
-  const { isPending, isError, data, error } = useQuery({
+  const { isLoading, data, error } = useQuery({
     queryKey: ["faq"],
     queryFn: async () => {
       const res = fetch("http://localhost:3001/faq");
@@ -27,6 +27,14 @@ export default function Faqs() {
     },
     initialData: fetchFaqData,
   });
+
+  if (isLoading) {
+    return <div>로딩중입니다...</div>;
+  }
+
+  if (error) {
+    return <div>에러가 발생했습니다.</div>;
+  }
 
   // console.log("FAQ", data, isPending, isError, error);
 
@@ -167,7 +175,7 @@ export default function Faqs() {
           </div>
         </div>
       </div>
-      {isPending ? <IsLoading /> : !data && <NoResult />}
+      {isLoading ? <IsLoading /> : !data && <NoResult />}
       {data &&
         data.map((data: FaqDataProps) => {
           const searchedData = data.faq.filter(

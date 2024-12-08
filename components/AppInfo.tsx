@@ -5,11 +5,18 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchPageData } from "@/app/actions";
 
 export default function AppInfo() {
-  const { data } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["page"],
     queryFn: fetchPageData,
   });
 
+  if (isLoading) {
+    return <div>로딩중입니다...</div>;
+  }
+
+  if (error) {
+    return <div>에러가 발생했습니다.</div>;
+  }
   // console.log("App Info:", data.appInfo);
 
   return (
