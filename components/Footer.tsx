@@ -4,6 +4,7 @@ import Link from "next/link";
 import ModalButton from "@/components/ModalButton";
 import { useQuery } from "@tanstack/react-query";
 import { v4 as uuidv4 } from "uuid";
+import { TermsProps } from "@/types";
 
 export default function Footer() {
   const { data, isLoading, error } = useQuery({
@@ -30,7 +31,7 @@ export default function Footer() {
         <div className="flex flex-col items-start lg:items-end">
           <span className="text-white font-bold lg:mb-[10px] h-[52px] lg:h-auto flex gap-[24px] items-center">
             {data &&
-              data.map((item: any) => (
+              data.map((item: TermsProps) => (
                 <ModalButton
                   title={item.title}
                   content={item.content}

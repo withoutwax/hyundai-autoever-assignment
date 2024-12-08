@@ -10,3 +10,8 @@ export interface FaqDataProps {
   categories: string[];
   faq: FaqContentProps[];
 }
+
+export interface TermsProps {
+  title: string;
+  content: string;
+}

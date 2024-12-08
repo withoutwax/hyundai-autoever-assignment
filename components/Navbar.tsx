@@ -50,7 +50,7 @@ export default function Navbar() {
               ["자주 묻는 질문", "/faq"],
               ["새소식", "/news"],
               ["상담문의", "/counsel"],
-            ].map(([title, url], i) => (
+            ].map(([title, url]) => (
               <li className="mx-[16px] h-[80px]" key={uuidv4()}>
                 <Link
                   href={url}
@@ -102,7 +102,7 @@ export default function Navbar() {
             ["자주 묻는 질문", "/faq"],
             ["새소식", "/news"],
             ["상담문의", "/counsel"],
-          ].map(([title, url], i) => (
+          ].map(([title, url]) => (
             <li
               className="mx-[16px] mb-[8px] w-full justify-center"
               key={uuidv4()}
