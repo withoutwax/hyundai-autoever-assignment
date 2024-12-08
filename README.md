@@ -4,8 +4,8 @@
 
 ## Tech Stack
 
-- Next.js 를 사용, Tailwind CSS, 백엔드로는 json-server 페키지를 이용하였습니다.
-- FAQ의 Accordion 컴포넌트 구현을 위해 @radix-ui/react-accordion 라이브러리를 사용하였습니다.
+- [Next.js](https://nextjs.org) 를 사용, [Tailwind CSS](https://tailwindcss.com), 백엔드로는 [json-server](https://github.com/typicode/json-server) 페키지를 이용하였습니다.
+- FAQ의 Accordion 컴포넌트 구현을 위해 [@radix-ui/react-accordion](https://www.radix-ui.com/primitives/docs/components/accordion) 라이브러리를 사용하였습니다.
 - 데이터를 불러오기 위해서 React Query 라이브러리를 사용하였습니다.
 
 ## 시작하는 방법:
