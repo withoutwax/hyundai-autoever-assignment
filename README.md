@@ -13,6 +13,16 @@
 우선 `npm run json-server` 커멘드로 백엔드 서버를 시작합니다. 엔드 포인트는 http://localhost:3001 입니다.
 그 후 `npm run dev`로 [http://localhost:3000](http://localhost:3000) 사이트를 테스트 하실 수 있습니다.
 
+둘다 동시에 실행하실 경우 `npm run gogo`로 사용가능 합니다.
+
+### 서버 엔드포인트
+
+총 3가지의 서버 엔드포인트가 존재합니다:
+
+- http://localhost:3001/page - 페이지에 대한 정보를 가져오는 API 입니다. CMS를 사용한다고 가정해서 하드코딩이 아닌 데이터를 Fetch하는 방법으로 구현해보았습니다.
+- http://localhost:3001/terms - 개인정보, 이용약관 관련한 내용을 CMS / 서버에서 사용하는것으로 가정하여 불러왔습니다.
+- http://localhost:3001/faq - FAQ 관련 내용을 호출 할 수 있는 API 입니다.
+
 ## 구현 범위에 대한 설명
 
 FAQ 페이지는 크게 2가지의 중요 기능을 탑제하고 있습니다:
