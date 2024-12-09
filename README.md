@@ -40,7 +40,7 @@ FAQ 페이지는 한번 데이터가 결정이 되면 쉽게 바뀌지 않지만
 
 - SSG와 ISR 방식으로는 Node 런타임이 가능한 서버에서만 구현이 가능합니다. 기업의 입장에서 사용이 가능한 서버가 어떻게 될지 모르니 한정적인 서버 호스팅 선택권이 아쉬웠습니다.
 
-그래서 CSR로 데이터를 호출하는 방법을 생각하다가 React Query 에서 제공하는 SSR의 Prefetching 기능이 있어 SSR로 사이트를 사용자들이 볼 수 있도록 빨리 로딩을 진행하고 미리 데이터를 불러올 수 있으면 SSG처럼 데이터도 접근이 빠르다는 장점을 기인하여 적용하기로 하였습니다. 참조: (https://tanstack.com/query/latest/docs/framework/react/guides/ssr)[https://tanstack.com/query/latest/docs/framework/react/guides/ssr]
+그래서 CSR로 데이터를 호출하는 방법을 생각하다가 React Query 에서 제공하는 SSR의 Prefetching 기능이 있어 SSR로 사이트를 사용자들이 볼 수 있도록 빨리 로딩을 진행하고 미리 데이터를 불러올 수 있으면 SSG처럼 데이터도 접근이 빠르다는 장점을 기인하여 적용하기로 하였습니다. 참조: [https://tanstack.com/query/latest/docs/framework/react/guides/ssr](https://tanstack.com/query/latest/docs/framework/react/guides/ssr)
 
 - React Query의 Prefetching 기능으로 데이터를 우선적으로 먼저 가져오고 그 다음에 해당 컴포넌트나 또는 페이지가 로딩되면 Prefetching으로 가져온 데이터의 캐시를 사용해서 구현하는 방법입니다.
 
