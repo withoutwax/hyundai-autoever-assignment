@@ -4,7 +4,6 @@ import { useState, useRef, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import FaqContent from "./FaqContent";
 import { useQuery } from "@tanstack/react-query";
-import { fetchFaqData } from "@/app/actions";
 import NoResult from "./NoResult";
 import IsLoading from "@/components/IsLoading";
 import { FaqDataProps, FaqContentProps } from "@/types";
@@ -25,18 +24,18 @@ export default function Faqs() {
       const res = fetch("http://localhost:3001/faq");
       return (await res).json();
     },
-    initialData: fetchFaqData,
   });
 
   if (isLoading) {
-    return <div>로딩중입니다...</div>;
+    return <div className="py-20 text-center">로딩중입니다...</div>;
   }
 
   if (error) {
-    return <div>에러가 발생했습니다.</div>;
+    console.error("Faqs.tsx Error:", error);
+    return <div className="py-20 text-center">에러가 발생했습니다.</div>;
   }
 
-  // console.log("FAQ", data, isPending, isError, error);
+  // console.log("FAQ", data, error);
 
   const toggleModal = (state: boolean) => {
     if (state) {
@@ -176,43 +175,46 @@ export default function Faqs() {
         </div>
       </div>
       {isLoading ? <IsLoading /> : !data && <NoResult />}
-      {data &&
-        data.map((data: FaqDataProps) => {
-          const searchedData = data.faq.filter(
-            (faq: FaqContentProps) =>
-              faq.question.includes(search) || faq.answer.includes(search)
-          );
+      {data?.map((faqData: FaqDataProps) => {
+        const searchedData = faqData.faq.filter(
+          (faq: FaqContentProps) =>
+            faq.question.includes(search) || faq.answer.includes(search)
+        );
 
-          if (data.tab === "서비스도입" && tab === "서비스 도입") {
-            return (
-              <div key={uuidv4()}>
-                {search &&
-                  searchResultHeader({
-                    searchedData,
-                    setSearch,
-                  })}
-                <FaqContent
-                  data={searchedData}
-                  categoryList={data.categories}
-                />
-              </div>
-            );
-          } else if (data.tab === "서비스이용" && tab === "서비스 이용") {
-            return (
-              <div key={uuidv4()}>
-                {search &&
-                  searchResultHeader({
-                    searchedData,
-                    setSearch,
-                  })}
-                <FaqContent
-                  data={searchedData}
-                  categoryList={data.categories}
-                />
-              </div>
-            );
-          }
-        })}
+        if (faqData.tab === "서비스도입" && tab === "서비스 도입") {
+          console.log("faqData", faqData, faqData.categories);
+
+          return (
+            <div key={uuidv4()}>
+              {search &&
+                searchResultHeader({
+                  searchedData,
+                  setSearch,
+                })}
+              <FaqContent
+                data={searchedData}
+                categoryList={faqData.categories}
+              />
+            </div>
+          );
+        } else if (faqData.tab === "서비스이용" && tab === "서비스 이용") {
+          console.log("faqData", faqData, faqData.categories);
+
+          return (
+            <div key={uuidv4()}>
+              {search &&
+                searchResultHeader({
+                  searchedData,
+                  setSearch,
+                })}
+              <FaqContent
+                data={searchedData}
+                categoryList={faqData.categories}
+              />
+            </div>
+          );
+        }
+      })}
       <SearchAlertModal modalOpen={modalOpen} toggleModal={toggleModal} />
     </div>
   );

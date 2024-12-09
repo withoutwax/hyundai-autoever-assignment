@@ -7,7 +7,7 @@ import {
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
-import { fetchPageData, fetchFaqData, fetchFaqCategories } from "@/app/actions";
+import { fetchPageData, fetchFaqData } from "@/app/actions";
 
 export default async function Faq() {
   const queryClient = new QueryClient();
@@ -19,10 +19,6 @@ export default async function Faq() {
   await queryClient.prefetchQuery({
     queryKey: ["faq"],
     queryFn: fetchFaqData,
-  });
-  await queryClient.prefetchQuery({
-    queryKey: ["categories"],
-    queryFn: fetchFaqCategories,
   });
 
   return (

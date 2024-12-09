@@ -11,11 +11,12 @@ export default function AppInfo() {
   });
 
   if (isLoading) {
-    return <div>로딩중입니다...</div>;
+    return <div className="py-20 text-center">로딩중입니다...</div>;
   }
 
   if (error) {
-    return <div>에러가 발생했습니다.</div>;
+    console.error("AppInfo.tsx Error:", error);
+    return <div className="py-20 text-center">에러가 발생했습니다.</div>;
   }
   // console.log("App Info:", data.appInfo);
 

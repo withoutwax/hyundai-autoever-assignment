@@ -6,6 +6,8 @@ import { FaqContentProps } from "@/types";
 import { v4 as uuidv4 } from "uuid";
 import NoResult from "./NoResult";
 
+const INITIAL_LIMIT = 10;
+
 export default function FaqContent({
   data,
   categoryList,
@@ -14,7 +16,7 @@ export default function FaqContent({
   categoryList: string[];
 }) {
   const [activeCategory, setActiveCategory] = useState("전체");
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(INITIAL_LIMIT);
 
   const categoryData = data.filter((faq: FaqContentProps) => {
     return activeCategory === "전체" || faq.category === activeCategory;
@@ -27,7 +29,7 @@ export default function FaqContent({
           className="h-[36px] md:h-[44px] lg:h-[48px] inline-block cursor-pointer"
           onClick={() => {
             setActiveCategory("전체");
-            setLimit(10);
+            setLimit(INITIAL_LIMIT);
           }}
         >
           <input
@@ -56,7 +58,7 @@ export default function FaqContent({
               key={uuidv4()}
               onClick={() => {
                 setActiveCategory(category);
-                setLimit(10);
+                setLimit(INITIAL_LIMIT);
               }}
             >
               <input

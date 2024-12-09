@@ -2,20 +2,36 @@
 
 export async function fetchPageData() {
   const res = await fetch("http://localhost:3001/page");
-  return res.json();
+  const data = await res.json();
+
+  // Validate that data is a plain object
+  if (data && typeof data === "object" && data.constructor === Object) {
+    return data;
+  } else {
+    throw new Error("Invalid data format");
+  }
 }
 
 export async function fetchFaqData() {
   const res = await fetch("http://localhost:3001/faq");
-  return res.json();
-}
+  const data = await res.json();
 
-export async function fetchFaqCategories() {
-  const res = await fetch("http://localhost:3001/categories");
-  return res.json();
+  // Validate that data is a plain object
+  if (data && typeof data === "object" && data.constructor === Object) {
+    return data;
+  } else {
+    throw new Error("Invalid data format");
+  }
 }
 
 export async function fetchTermsPrivacyData() {
   const res = await fetch("http://localhost:3001/terms");
-  return res.json();
+  const data = await res.json();
+
+  // Validate that data is a plain object
+  if (data && typeof data === "object" && data.constructor === Object) {
+    return data;
+  } else {
+    throw new Error("Invalid data format");
+  }
 }
