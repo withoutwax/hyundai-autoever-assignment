@@ -12,8 +12,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const scrollHandler = () => {
-      window.scrollY > 10 ? setTop(false) : setTop(true);
+      const { scrollY } = window;
+      if (scrollY > 10) {
+        setTop(false);
+      } else {
+        setTop(true);
+      }
     };
+
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
