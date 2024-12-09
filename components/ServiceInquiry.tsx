@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPageData } from "@/app/actions";
 
 export default function ServiceInquiry() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["page"],
-    queryFn: fetchPageData,
+    queryFn: async () => {
+      const res = fetch("http://localhost:3001/page");
+      return (await res).json();
+    },
   });
 
   if (isLoading) {

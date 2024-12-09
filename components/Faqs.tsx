@@ -182,7 +182,7 @@ export default function Faqs() {
         );
 
         if (faqData.tab === "서비스도입" && tab === "서비스 도입") {
-          console.log("faqData", faqData, faqData.categories);
+          // console.log("faqData", faqData, faqData.categories);
 
           return (
             <div key={uuidv4()}>
@@ -198,7 +198,7 @@ export default function Faqs() {
             </div>
           );
         } else if (faqData.tab === "서비스이용" && tab === "서비스 이용") {
-          console.log("faqData", faqData, faqData.categories);
+          // console.log("faqData", faqData, faqData.categories);
 
           return (
             <div key={uuidv4()}>
